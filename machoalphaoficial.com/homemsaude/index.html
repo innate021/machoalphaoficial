@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirmação - Acesso Liberado</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .container {
+        background: white;
+        border-radius: 20px;
+        padding: 60px 40px;
+        text-align: center;
+        max-width: 500px;
+        width: 100%;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .shield-icon {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 30px;
+        position: relative;
+      }
+
+      .shield {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(145deg, #4caf50, #2e7d32);
+        border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
+      }
+
+      .checkmark {
+        width: 60px;
+        height: 60px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .checkmark::after {
+        content: "✓";
+        color: #4caf50;
+        font-size: 32px;
+        font-weight: bold;
+      }
+
+      .title {
+        font-size: 32px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .description {
+        font-size: 18px;
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 40px;
+      }
+
+      .continue-btn {
+        background: linear-gradient(145deg, #4caf50, #2e7d32);
+        color: white;
+        border: none;
+        padding: 18px 50px;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 50px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+      }
+
+      .continue-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+      }
+
+      .continue-btn::before {
+        content: "✓";
+        font-size: 18px;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 40px 20px;
+        }
+
+        .title {
+          font-size: 24px;
+        }
+
+        .description {
+          font-size: 16px;
+        }
+
+        .continue-btn {
+          padding: 15px 40px;
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="shield-icon">
+        <div class="shield">
+          <div class="checkmark"></div>
+        </div>
+      </div>
+
+      <h1 class="title">TUDO CERTO!</h1>
+
+      <p class="description">
+        Clique no botão abaixo para ser<br />
+        redirecionado para a página solicitada!
+      </p>
+
+      <a href="vsl.html" class="continue-btn"> CONTINUAR </a>
+    </div>
+
+    <!-- Pixels de rastreamento podem ser adicionados aqui -->
+    <script>
+      // Adicionar delay para parecer mais natural
+      document.addEventListener("DOMContentLoaded", function () {
+        const continueBtn = document.querySelector(".continue-btn");
+
+        // Opcional: adicionar um pequeno delay antes de permitir o clique
+        setTimeout(() => {
+          continueBtn.style.opacity = "1";
+        }, 500);
+
+        // Tracking opcional para conversões
+        continueBtn.addEventListener("click", function () {
+          // Aqui você pode adicionar pixels de tracking
+          // fbq('track', 'ViewContent');
+          // gtag('event', 'page_view');
+        });
+      });
+    </script>
+  </body>
+</html>
