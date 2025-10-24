@@ -481,20 +481,14 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
           "
         >
-          <video
-            id="main-video"
-            width="100%"
-            height="auto"
-            style="display: block"
-            preload="metadata"
-            controlslist="nodownload noremoteplayback nofullscreen"
-          >
-            <source src="../../videosite.mp4" type="video/mp4" />
-            <p>
-              Seu navegador não suporta vídeos HTML5.
-              <a href="../../videosite.mp4">Baixe o vídeo</a>.
-            </p>
-          </video>
+          <!-- VTurb SmartPlayer substitui o <video> local -->
+          <vturb-smartplayer id="vid-68fbd3dc06facf3153329a75" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer>
+          <script type="text/javascript">
+            var s = document.createElement('script');
+            s.src = "https://scripts.converteai.net/c907564c-805a-4669-91df-ff36be77f406/players/68fbd3dc06facf3153329a75/v4/player.js";
+            s.async = true;
+            document.head.appendChild(s);
+          </script>
 
           <!-- Controles customizados para VSL -->
           <div
