@@ -490,6 +490,33 @@
             document.head.appendChild(s);
           </script>
 
+          <script>
+            // Se o VTurb SmartPlayer estiver presente, esconder os controles customizados
+            (function() {
+              function hideCustomControlsIfVturb() {
+                if (!document.querySelector('vturb-smartplayer')) return;
+                var custom = document.getElementById('custom-controls');
+                if (custom) custom.style.display = 'none';
+                var playBtn = document.getElementById('play-pause-btn');
+                if (playBtn) playBtn.style.display = 'none';
+                var progressTrack = document.getElementById('progress-track');
+                if (progressTrack) progressTrack.style.display = 'none';
+                var fullscreenBtn = document.getElementById('fullscreen-btn');
+                if (fullscreenBtn) fullscreenBtn.style.display = 'none';
+              }
+
+              // Executa ao carregar o DOM e também quando o script do VTurb for carregado
+              document.addEventListener('DOMContentLoaded', hideCustomControlsIfVturb);
+              // caso o player carregue depois, tenta novamente algumas vezes
+              var tries = 0;
+              var t = setInterval(function() {
+                tries++;
+                hideCustomControlsIfVturb();
+                if (tries > 10 || document.querySelector('vturb-smartplayer')) clearInterval(t);
+              }, 500);
+            })();
+          </script>
+
           <!-- Controles customizados para VSL -->
           <div
             id="custom-controls"
