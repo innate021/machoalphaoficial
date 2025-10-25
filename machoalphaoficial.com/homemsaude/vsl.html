@@ -656,7 +656,7 @@
         </div>
       </div>
 
-      <!-- Botão CTA imediato abaixo do vídeo (visível sem depender do término do vídeo) -->
+      <!-- Botão CTA abaixo do vídeo: inicialmente oculto, aparece após 30s -->
       <div style="text-align: center; margin-top: 18px">
         <a
           href="https://pay.cakto.com.br/svvkpoi_597621?affiliate=TZ6zZyAn"
@@ -672,6 +672,10 @@
             text-decoration: none;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             font-size: 18px;
+            opacity: 0;
+            pointer-events: none;
+            visibility: hidden;
+            transition: opacity 0.4s ease;
           "
           rel="noopener noreferrer"
           >QUERO ME TORNAR UM TOURO NA CAMA</a
@@ -1080,6 +1084,21 @@
             });
           });
         }
+      });
+    </script>
+
+    <!-- Script: revelar o botão abaixo do vídeo após 30 segundos (a partir do carregamento da página) -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const cta = document.getElementById("cta-under-video");
+        if (!cta) return;
+
+        // Delay de 5 minutos (300000 ms)
+        setTimeout(function () {
+          cta.style.visibility = "visible";
+          cta.style.opacity = "1";
+          cta.style.pointerEvents = "auto";
+        }, 300000);
       });
     </script>
   </body>
