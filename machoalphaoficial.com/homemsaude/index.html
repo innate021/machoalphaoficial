@@ -150,14 +150,13 @@
 
     <!-- Pixels de rastreamento podem ser adicionados aqui -->
     <script>
-      // Adicionar delay para parecer mais natural
+      // Mostrar o botão imediatamente (removido o delay)
       document.addEventListener("DOMContentLoaded", function () {
         const continueBtn = document.querySelector(".continue-btn");
+        if (!continueBtn) return;
 
-        // Opcional: adicionar um pequeno delay antes de permitir o clique
-        setTimeout(() => {
-          continueBtn.style.opacity = "1";
-        }, 500);
+        // Exibe o botão imediatamente sem delay
+        continueBtn.style.opacity = "1";
 
         // Tracking opcional para conversões
         continueBtn.addEventListener("click", function () {
